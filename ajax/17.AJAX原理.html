@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest对象</title>
+</head>
+<body>
+    <!-- 插入省份列表 -->
+    <p class="my-p"></p>
+    <script>
+        //AJAX原理
+        
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET','http://hmajax.itheima.net/api/province')
+        xhr.addEventListener('load',()=>{
+            console.log(xhr.response);
+            //这个时候得到的是对象数组
+            const data = JSON.parse(xhr.response)
+            //数组再转字符串
+            document.querySelector('.my-p').innerHTML = data.list.join('<br>')
+        })
+        xhr.send()
+    </script>
+</body>
+</html>

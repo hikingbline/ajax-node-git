@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX查询参数</title>
+</head>
+<body>
+    <p class="my-p"></p>
+    <script>
+        const xhr = new XMLHttpRequest()
+        // 问题：URL 中的查询参数不允许在 = 前后添加空格，空格会导致参数解析错误，
+        // 服务器可能无法正确识别 pname 的值。
+        xhr.open('GET','http://hmajax.itheima.net/api/city?pname=辽宁省')
+        xhr.addEventListener('loadend',()=>{
+            console.log(xhr.response);
+            const data = JSON.parse(xhr.response)
+            document.querySelector('.my-p').innerHTML = data.list.join('<br>')
+        })
+        xhr.send()
+
+    </script>
+</body>
+</html>

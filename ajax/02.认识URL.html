@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初识URL</title>
+</head>
+<body>
+    <!-- 组成部分 协议 域名 资源路径 -->
+    <!--http : 超文本传输协议，规定浏览器和服务器之间传输数据的格式  -->
+    <!-- 新闻数据地址：http://hmajax.itheimas.net/api/news -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    axios({
+        url:'http://hmajax.itheima.net/api/news'
+    }).then(result => {
+        console.log(result);
+        //data
+    })
+
+  </script>
+    
+</body>
+</html>

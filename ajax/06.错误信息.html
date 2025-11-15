@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios错误信息</title>
+</head>
+<body>
+   <button class="btn">注册用户</button>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      document.querySelector(".btn").addEventListener("click", () => {
+        axios({
+          url: "http://hmajax.itheima.net/api/register",
+          method: 'POST',
+          data: {
+            username: "itheima007",
+            password: "7654321",
+          },
+        })
+          .then((result) => {
+            console.log("注册成功", result);
+          })
+          .catch((error) => {
+            console.log(error);
+            console.log(error.response.data.message);
+            alert(erroe.response.data.message)
+          });
+      });
+    </script>
+</body>
+</html>
