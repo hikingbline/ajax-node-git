@@ -7,11 +7,15 @@ body {
   justify-content: center;
 }
 /* 提示框 */
-.alert{
+.alert{       
   width: 400px;
   position: fixed;
   top: 50px;
   left: 50%;
+
+
+
+  
   transform: translateX(-50%);
   display: none;
 }
